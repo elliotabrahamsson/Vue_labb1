@@ -26,16 +26,16 @@ onMounted(async () => {
 
 <template>
   <ul
-    class="flex flex-wrap justify-center items-stretch gap-4 ml-[10%] mr-[10%]"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 ml-[10%] mr-[10%]"
   >
     <li
       v-for="olympians in data"
       :key="olympians.id"
-      class="border-2 border-solid border-gray-700 rounded-lg flex-1 basis-[calc(20%-1rem)] w-max[200px] mb-[5%] overflow-hidden"
+      class="border-2 border-solid border-gray-700 rounded-lg flex-1 basis-[calc(50%-1rem)] w-max[200px] mb-[5%] overflow-hidden"
     >
       <img
         :src="olympians.Picture"
-        class="max-w-full h-auto object-cover object-top aspect-square"
+        class="w-full h-auto object-cover object-top aspect-square"
       />
       <p>{{ olympians.name }}</p>
       <p>{{ olympians.age }}</p>
