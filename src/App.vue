@@ -1,19 +1,10 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
 import DataCall from "./components/DataCall.vue";
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-  <DataCall class="flex flex-auto'" />
+  <h1 class="text-4xl text-center mb-10">Mr. Olympias</h1>
+  <DataCall class="flex flex-wrap gap-4 ml-[10%] mr-[10%]" />
 </template>
 
 <style scoped></style>

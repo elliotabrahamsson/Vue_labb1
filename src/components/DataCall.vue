@@ -25,18 +25,23 @@ onMounted(async () => {
 </script>
 
 <template>
-  <ul>
-    <li v-for="olympians in data" :key="olympians.id">
+  <ul
+    class="flex flex-wrap justify-center items-stretch gap-4 ml-[10%] mr-[10%]"
+  >
+    <li
+      v-for="olympians in data"
+      :key="olympians.id"
+      class="border-2 border-solid border-gray-700 rounded-lg flex-1 basis-[calc(20%-1rem)] w-max[200px] mb-[5%] overflow-hidden"
+    >
+      <img
+        :src="olympians.Picture"
+        class="max-w-full h-auto object-cover object-top aspect-square"
+      />
       <p>{{ olympians.name }}</p>
       <p>{{ olympians.age }}</p>
       <p>{{ olympians.nationality }}</p>
       <p>{{ olympians.Division }}</p>
       <p>{{ olympians.Wins }}</p>
-      <img :src="olympians.Picture" />
-      <p>{{ olympians.Bio1 }}</p>
-      <p>{{ olympians.Bio2 }}</p>
-      <p>{{ olympians.Bio3 }}</p>
-      <p>{{ olympians.Biosum }}</p>
     </li>
   </ul>
 </template>
