@@ -31,7 +31,7 @@ onMounted(async () => {
     <li
       v-for="olympians in data"
       :key="olympians.id"
-      class="border-2 border-solid border-gray-700 rounded-lg flex-1 basis-[calc(50%-1rem)] w-max[200px] mb-[5%] overflow-hidden"
+      class="border-2 border-solid border-gray-700 rounded-lg flex-1 basis-[calc(50%-1rem)] w-max[200px] mb-[5%] overflow-hidden hover:transform hover:scale-110 transition-transform duration-100 ease-in"
     >
       <img
         :src="olympians.Picture"
