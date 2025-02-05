@@ -3,11 +3,11 @@ import { ref, onMounted } from "vue";
 import axios from "axios";
 import OlympiaCards from "./OlympiaCards.vue";
 
-const olympians = ref([]);
+const data = ref([]);
 
 onMounted(async () => {
   const response = await axios.get("http://localhost:5000/MrOlympias");
-  olympians.value = response.data;
+  data.value = response.data;
   console.log(data.value);
 
   await axios
@@ -26,5 +26,13 @@ onMounted(async () => {
 </script>
 
 <template>
-  <OlympiaCards :olympians="olympians" />
+  <ul
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 ml-[10%] mr-[10%]"
+  >
+    <OlympiaCards
+      v-for="olympian in data"
+      :key="olympian.id"
+      :olympian="olympian"
+    />
+  </ul>
 </template>
