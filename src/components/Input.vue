@@ -5,6 +5,7 @@
   </h3>
 
   <div class="flex flex-col mt-10 space-y-2 w-1/4 top-32 left-80 absolute">
+    <input type="file" @change="onFileChange" />
     <input v-model="formData.Name" placeholder="Namn" class="bg-gray-500" />
     <input v-model="formData.age" placeholder="Ålder" class="bg-gray-500" />
     <input
@@ -32,5 +33,15 @@ const formData = reactive({
   nationality: "",
   Division: "",
   Wins: "",
+  Picture: null,
+  previewUrl: null,
 });
+
+const onFileChange = (event) => {
+  const selectedFile = event.target.files[0];
+  if (selectedFile) {
+    formData.Picture = selectedFile;
+    formData.previewUrl = URL.createObjectURL(selectedFile);
+  }
+};
 </script>
