@@ -5,7 +5,7 @@ const props = defineProps({ olympian: Object });
 
 <template>
   <li
-    class="border-2 border-solid border-gray-700 rounded-lg flex-1 basis-[calc(50%-1rem)] w-max[200px] mb-[5%] overflow-hidden hover:transform hover:scale-110 transition-transform duration-100 ease-in cursor-pointer"
+    class="border-2 border-solid border-gray-700 rounded-lg flex-1 basis-[calc(50%-1rem)] w-[200px] mb-[5%] overflow-hidden hover:scale-110 transition-transform duration-200 ease-in-out cursor-pointer"
   >
     <LargerCard>
       <div class="w-full h-full">

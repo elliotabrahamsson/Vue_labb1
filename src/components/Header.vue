@@ -3,11 +3,13 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <nav class="ml-28 text-4xl">
-    <div>
-      <RouterLink to="/">Home </RouterLink>
+  <nav class="text-4xl bg-gray-400">
+    <div class="ml-64 flex gap-5">
+      <RouterLink to="/" class="hover:underline">Home </RouterLink>
 
-      <RouterLink to="/Add_Olympia">Add Olympia</RouterLink>
+      <RouterLink to="/Add_Olympia" class="hover:underline"
+        >Add Olympia</RouterLink
+      >
     </div>
   </nav>
 </template>
