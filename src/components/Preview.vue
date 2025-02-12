@@ -1,18 +1,27 @@
 <template>
-  <div
-    class="border-2 border-solid border-gray-700 rounded-lg w-[200px] h-[320px] mb-[5%] overflow-hidden hover:scale-110 transition-transform duration-200 ease-in-out cursor-pointer flex flex-col absolute right-80 top-32"
-  >
-    <img
-      v-if="data.previewUrl"
-      :src="data.previewUrl"
-      class="w-auto h-auto object-cover object-top aspect-square"
-    />
+  <div class="flex flex-col absolute right-[38%] top-32">
+    <div
+      class="border-2 border-solid border-gray-700 rounded-lg w-[200px] h-[325px] mb-[5%] overflow-hidden hover:scale-110 transition-transform duration-200 ease-in-out cursor-pointer"
+    >
+      <img
+        v-if="data.previewUrl"
+        :src="data.previewUrl"
+        class="w-auto h-auto object-cover object-top aspect-square"
+      />
 
-    <p>{{ data.Name }}</p>
-    <p>{{ data.age }}</p>
-    <p>{{ data.nationality }}</p>
-    <p>{{ data.Division }}</p>
-    <p>{{ data.Wins }}</p>
+      <p>{{ data.Name }}</p>
+      <p>{{ data.age }}</p>
+      <p>{{ data.nationality }}</p>
+      <p>{{ data.Division }}</p>
+      <p>{{ data.Wins }}</p>
+    </div>
+    <input
+      type="button"
+      name="Publish"
+      id=" Publish"
+      value="Publish"
+      class="bg-gray-500 rounded-md"
+    />
   </div>
 </template>
 

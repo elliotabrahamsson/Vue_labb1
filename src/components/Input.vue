@@ -4,21 +4,42 @@
     Fyll formuläret för att lägga till en Olympia!
   </h3>
 
-  <div class="flex flex-col mt-10 space-y-2 w-1/4 top-32 left-80 absolute">
-    <input type="file" @change="onFileChange" />
-    <input v-model="formData.Name" placeholder="Namn" class="bg-gray-500" />
-    <input v-model="formData.age" placeholder="Ålder" class="bg-gray-500" />
+  <div class="flex flex-col mt-10 space-y-2 w-1/4 top-32 left-[30%] absolute">
+    <input
+      type="file"
+      placeholder="Tryck här för att ladda upp en bild"
+      @change="onFileChange"
+      class="bg-gray-500 rounded-md w-64 hover:border-0 cursor-pointer"
+    />
+    <input
+      v-model="formData.Name"
+      placeholder="Namn"
+      class="bg-gray-500 rounded-md w-64 hover:border-0"
+    />
+    <input
+      v-model="formData.age"
+      type="number"
+      placeholder="Ålder"
+      class="bg-gray-500 rounded-md w-64 hover:border-0"
+    />
     <input
       v-model="formData.nationality"
+      type="text"
       placeholder="Nationalitet"
-      class="bg-gray-500"
+      class="bg-gray-500 rounded-md w-64 hover:border-0"
     />
     <input
       v-model="formData.Division"
+      type="text"
       placeholder="Division"
-      class="bg-gray-500"
+      class="bg-gray-500 rounded-md w-64 hover:border-0"
     />
-    <input v-model="formData.Wins" placeholder="Vinster" class="bg-gray-500" />
+    <input
+      v-model="formData.Wins"
+      type="number"
+      placeholder="Vinster"
+      class="bg-gray-500 rounded-md w-64 hover:border-0"
+    />
   </div>
 
   <PreviewVue :data="formData" />
