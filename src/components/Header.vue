@@ -8,7 +8,7 @@ import { RouterLink, RouterView } from "vue-router";
       <RouterLink to="/" class="hover:underline">Home </RouterLink>
 
       <RouterLink to="/Add_Olympia" class="hover:underline"
-        >Add Olympia</RouterLink
+        >Preview Olympia</RouterLink
       >
     </div>
   </nav>

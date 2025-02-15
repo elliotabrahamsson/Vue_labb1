@@ -15,13 +15,6 @@
       <p>{{ data.Division }}</p>
       <p>{{ data.Wins }}</p>
     </div>
-    <input
-      type="button"
-      name="Publish"
-      id=" Publish"
-      value="Publish"
-      class="bg-gray-500 rounded-md"
-    />
   </div>
 </template>
 
