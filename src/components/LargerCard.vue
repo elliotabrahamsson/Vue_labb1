@@ -20,11 +20,7 @@
           class="w-full h-auto object-cover object-top aspect-square"
         />
         <div class="mt-4">
-          <h2 class="text-2xl font-bold">{{ olympian.name }}</h2>
-          <p>Ålder: {{ olympian.age }}</p>
-          <p>Nationalitet: {{ olympian.nationality }}</p>
-          <p>Division: {{ olympian.Division }}</p>
-          <p>Vinster: {{ olympian.Wins }}</p>
+          <div v-html="OlympianInfo"></div>
         </div>
       </div>
 
@@ -65,8 +61,9 @@
 
 <script setup>
 import { defineProps, defineEmits } from "vue";
+import { computed } from "vue";
 
-defineProps({
+const props = defineProps({
   olympian: Object,
   isOpen: Boolean,
 });
@@ -76,4 +73,14 @@ const emit = defineEmits(["close"]);
 const closeCard = () => {
   emit("close");
 };
+
+const OlympianInfo = computed(() => {
+  return props.olympian
+    ? `<h1><strong>${props.olympian.name}</strong></h1>
+       ${props.olympian.age} år
+       <br>${props.olympian.nationality}
+       <br>${props.olympian.Division}
+       <br>${props.olympian.Wins} vinster`
+    : "Hittar inte info";
+});
 </script>

@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import LargerCard from "./LargerCard.vue";
 
 const props = defineProps({
@@ -7,6 +7,12 @@ const props = defineProps({
 });
 
 const isModalOpen = ref(false);
+
+watch(isModalOpen, (newValue) => {
+  if (newValue) {
+    console.log("Öppnade kort");
+  }
+});
 
 const openModal = () => {
   isModalOpen.value = true;
