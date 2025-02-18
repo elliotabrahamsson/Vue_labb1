@@ -1,3 +1,36 @@
+<script setup>
+import { defineProps, defineEmits, computed } from "vue";
+import { useUserStore } from "/stores/userStore.js";
+
+const userStore = useUserStore();
+
+const props = defineProps({
+  isOpen: Boolean,
+  selectedIndex: Number,
+});
+
+const emit = defineEmits(["close"]);
+
+const closeCard = () => {
+  emit("close");
+};
+
+const selectedOlympian = computed(() => {
+  return userStore.data[props.selectedIndex] || null;
+});
+
+const OlympianInfo = computed(() => {
+  const olympian = selectedOlympian.value;
+  return olympian
+    ? `<h1><strong>${olympian.name}</strong></h1>
+       ${olympian.age} år
+       <br>${olympian.nationality}
+       <br>${olympian.Division}
+       <br>${olympian.Wins} vinster`
+    : "Hittar inte info";
+});
+</script>
+
 <template>
   <div
     v-if="isOpen"
@@ -15,8 +48,8 @@
 
       <div class="w-full sm:w-[40%] h-full flex flex-col justify-center mx-5">
         <img
-          v-if="olympian.Picture"
-          :src="olympian.Picture"
+          v-if="selectedOlympian.Picture"
+          :src="selectedOlympian.Picture"
           class="w-full h-auto object-cover object-top aspect-square"
         />
         <div class="mt-4">
@@ -27,60 +60,34 @@
       <div class="w-full sm:w-[60%] h-full overflow-y-auto mt-6 sm:mt-0 px-4">
         <h2 class="text-2xl sm:text-4xl">Karriär</h2>
 
-        <p v-if="olympian.Bio1" class="text-sm sm:text-base mb-4">
-          {{ olympian.Bio1 }}
+        <p v-if="selectedOlympian.Bio1" class="text-sm sm:text-base mb-4">
+          {{ selectedOlympian.Bio1 }}
         </p>
-        <p v-if="!olympian.Bio1" class="text-sm sm:text-base mb-4">
+        <p v-if="!selectedOlympian.Bio1" class="text-sm sm:text-base mb-4">
           Det finns ingen Biotext för denna olympia!
         </p>
 
-        <p v-if="olympian.Bio2" class="text-sm sm:text-base mb-4">
-          {{ olympian.Bio2 }}
+        <p v-if="selectedOlympian.Bio2" class="text-sm sm:text-base mb-4">
+          {{ selectedOlympian.Bio2 }}
         </p>
-        <p v-if="!olympian.Bio2" class="text-sm sm:text-base mb-4">
+        <p v-if="!selectedOlympian.Bio2" class="text-sm sm:text-base mb-4">
           Det finns ingen Biotext för denna olympia!
         </p>
 
-        <p v-if="olympian.Bio3" class="text-sm sm:text-base mb-4">
-          {{ olympian.Bio3 }}
+        <p v-if="selectedOlympian.Bio3" class="text-sm sm:text-base mb-4">
+          {{ selectedOlympian.Bio3 }}
         </p>
-        <p v-if="!olympian.Bio3" class="text-sm sm:text-base mb-4">
+        <p v-if="!selectedOlympian.Bio3" class="text-sm sm:text-base mb-4">
           Det finns ingen Biotext för denna olympia!
         </p>
 
-        <p v-if="olympian.BioSum" class="text-sm sm:text-base mb-4">
-          {{ olympian.BioSum }}
+        <p v-if="selectedOlympian.BioSum" class="text-sm sm:text-base mb-4">
+          {{ selectedOlympian.BioSum }}
         </p>
-        <p v-if="!olympian.BioSum" class="text-sm sm:text-base mb-4">
+        <p v-if="!selectedOlympian.BioSum" class="text-sm sm:text-base mb-4">
           Det finns ingen Bio sammanfattning för denna olympia!
         </p>
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-import { defineProps, defineEmits } from "vue";
-import { computed } from "vue";
-
-const props = defineProps({
-  olympian: Object,
-  isOpen: Boolean,
-});
-
-const emit = defineEmits(["close"]);
-
-const closeCard = () => {
-  emit("close");
-};
-
-const OlympianInfo = computed(() => {
-  return props.olympian
-    ? `<h1><strong>${props.olympian.name}</strong></h1>
-       ${props.olympian.age} år
-       <br>${props.olympian.nationality}
-       <br>${props.olympian.Division}
-       <br>${props.olympian.Wins} vinster`
-    : "Hittar inte info";
-});
-</script>
