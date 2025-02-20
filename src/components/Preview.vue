@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col absolute right-[38%] top-32">
+  <div class="flex">
     <div
-      class="border-2 border-solid border-gray-700 rounded-lg w-[200px] h-[325px] mb-[5%] overflow-hidden hover:scale-110 transition-transform duration-200 ease-in-out cursor-pointer"
+      class="text-white border-2 border-solid border-gray-700 rounded-lg w-[200px] h-[325px] mb-[5%] overflow-hidden hover:scale-110 transition-transform duration-200 ease-in-out cursor-pointer"
     >
       <img
         v-if="data.previewUrl"
@@ -9,11 +9,11 @@
         class="w-auto h-auto object-cover object-top aspect-square"
       />
 
-      <p>{{ data.Name }}</p>
-      <p>{{ data.age }}</p>
-      <p>{{ data.nationality }}</p>
-      <p>{{ data.Division }}</p>
-      <p>{{ data.Wins }}</p>
+      <p class="text-lg font-semibold">{{ data.Name }}</p>
+      <p class="text-sm">{{ data.age }}</p>
+      <p class="text-sm">{{ data.nationality }}</p>
+      <p class="text-sm">{{ data.Division }}</p>
+      <p class="text-sm font-medium">{{ data.Wins }}</p>
     </div>
   </div>
 </template>

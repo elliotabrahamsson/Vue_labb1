@@ -4,6 +4,8 @@ import Input from "../components/Input.vue";
 </script>
 
 <template>
-  <Header />
-  <Input />
+  <body class="bg-black h-screen">
+    <Header />
+    <Input />
+  </body>
 </template>

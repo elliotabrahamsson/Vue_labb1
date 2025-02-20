@@ -42,7 +42,7 @@ const closeModal = () => {
       :src="olympian.Picture"
       class="w-full h-auto object-cover object-top aspect-square"
     />
-    <div class="mt-3">
+    <div class="mt-3 bg-white p-1 border-3 border-gray-700 rounded-lg">
       <p class="text-lg font-semibold" v-if="olympian.name">
         {{ olympian.name }}
       </p>

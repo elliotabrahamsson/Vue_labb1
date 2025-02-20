@@ -3,11 +3,11 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <nav class="text-4xl bg-gray-400">
-    <div class="ml-64 flex gap-5">
-      <RouterLink to="/" class="hover:underline">Home </RouterLink>
+  <nav class="flex text-3xl bg-gray-400">
+    <div class="mx-auto space-x-2">
+      <RouterLink to="/" class="font-mono hover:underline">Home </RouterLink>
 
-      <RouterLink to="/Add_Olympia" class="hover:underline"
+      <RouterLink to="/Add_Olympia" class="font-mono hover:underline"
         >Preview Olympia</RouterLink
       >
     </div>
